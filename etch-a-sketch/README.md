@@ -12,16 +12,15 @@
 
 </div>
 
-
 <div align="center">
 
 <img alt="mit_badge" src="https://img.shields.io/badge/license-MIT-blue"> 
 
 </div>
 
-
-
 Browser version of a sketchpad tool.
+
+> Go to the project website by [clicking here!](https://marciodzn.github.io/the-odin-project-exercises/etch-a-sketch/)
 
 <div align="center">
 
@@ -35,7 +34,6 @@ Browser version of a sketchpad tool.
 2. HTML
 3. CSS
 
-> Go to the exercise page on [The Odin Project's Website.](https://www.theodinproject.com/lessons/foundations-etch-a-sketch)
 
 
 
