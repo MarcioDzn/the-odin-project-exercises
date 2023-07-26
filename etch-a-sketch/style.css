@@ -17,6 +17,29 @@ body{
 
 .container{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-dimensions{
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    margin-bottom: 30px;
+    cursor: pointer;
+
+    transition: 0.1s;
+}
+
+.btn-dimensions:hover{
+    transform: translate(-3px, -3px);
+}
+
+.canvas{
+    display: flex;
     flex-wrap: wrap;
     border: solid 5px black;
     width: var(--canvas-size);
