@@ -1,31 +1,69 @@
 const gameChoices = ['rock', 'paper', 'scissors'];
+let roundsAmount = 5;
 
 function getComputerChoice(){
     return gameChoices[Math.floor(Math.random() * gameChoices.length)];
 }
 
 function formatString(string){
-    return string.trim().toLowerCase();
+    if (string !== null)
+        return string.trim().toLowerCase();
+}
+
+function getPlayerChoice(){
+    let playerChoice = formatString(prompt('Make your move! [Rock, Paper, Scissors]'));
+    while (!gameChoices.includes(playerChoice) || playerChoice === null){
+        playerChoice = formatString(prompt('Invalid move!\nMake your move! [Rock, Paper, Scissors]'));
+    }
+
+    return playerChoice;
+}
+
+function checkFinalWinner(playerScore, computerScore){
+    if (playerScore > computerScore) return 'Player Wins!';
+    else if (playerScore < computerScore) return 'Computer Wins!';
+    return 'Draw!';
+}
+
+function checkRoundWinner(playerSelection, computerSelection){
+    const beats = {'paper': 'rock', 'rock': 'scissors', 'scissors': 'paper'};
+
+    if (playerSelection === computerSelection){
+        return 0;
+
+    } else if (beats[playerSelection] == computerSelection){
+        return 1;
+    }
+
+    return -1;
 }
 
 function playRound(playerSelection, computerSelection){
-    const beats = {'paper': 'rock', 'rock': 'scissors', 'scissors': 'paper'};
+    const roundWinner = checkRoundWinner(playerSelection, computerSelection);
 
-    const playerChoice = formatString(playerSelection);
-    const computerChoice = computerSelection;
+    if (roundWinner === 0){
+        return `Draw! '${playerSelection}' matches '${computerSelection}'.`;
 
-    if (playerChoice === computerChoice){
-        return `Draw! '${playerChoice}' matches '${computerChoice}'.`;
-
-    } else if (beats[playerChoice] == computerChoice){
-        return `You Win! '${playerChoice}' beats '${computerChoice}'.`;
+    } else if (roundWinner === 1){
+        return `You Win! '${playerSelection}' beats '${computerSelection}'.`;
     }
 
-    return `You Lose! '${playerChoice}' loses to '${computerChoice}'.`;
+    return `You Lose! '${playerSelection}' loses to '${computerSelection}'.`;
 }
 
-const playerSelection = '  paPer   ';
-const computerSelection = getComputerChoice();
+function game(){
 
-console.log(playRound(playerSelection, computerSelection));
+    for (let i = 0; i < roundsAmount; i++){
+        const playerSelection = getPlayerChoice();
+        const computerSelection = getComputerChoice();
+
+        const roundWinner = checkRoundWinner(playerSelection, computerSelection);
+
+        console.log(`\nRound ${i+1}`);
+        console.log(playRound(playerSelection, computerSelection));
+    }
+
+}
+
+game();
 
