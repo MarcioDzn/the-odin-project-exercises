@@ -52,17 +52,23 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game(){
+    let playerScore = 0;
+    let computerScore = 0;
 
     for (let i = 0; i < roundsAmount; i++){
         const playerSelection = getPlayerChoice();
         const computerSelection = getComputerChoice();
 
         const roundWinner = checkRoundWinner(playerSelection, computerSelection);
+        if (roundWinner == 1) playerScore++;
+        else if (roundWinner == -1) computerScore++;
 
         console.log(`\nRound ${i+1}`);
         console.log(playRound(playerSelection, computerSelection));
+        console.log(`Player Score: ${playerScore} | Computer score: ${computerScore}`);
     }
 
+    console.log(`========= ${checkFinalWinner(playerScore, computerScore)} =========`);
 }
 
 game();
