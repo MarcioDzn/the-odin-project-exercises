@@ -71,5 +71,5 @@ function game(){
     console.log(`========= ${checkFinalWinner(playerScore, computerScore)} =========`);
 }
 
-game();
+// game();
 

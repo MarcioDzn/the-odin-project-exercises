@@ -1,0 +1,96 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    
+    width: 100%;
+    height: 100vh;
+}
+
+section{
+    margin: auto;
+}
+
+.game-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.game-winner{
+    text-align: center;
+    background-color: rgb(238, 238, 238);
+    padding: 40px;
+}
+
+.match-choices{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+
+.match-info{
+    text-align: center;
+}
+
+.move{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100px;
+    height: 100px;
+
+    border: solid 5px rgb(238, 238, 238);
+    margin-top: 5px;
+}
+
+.game-result{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 80px;
+}
+
+.match-result{
+    text-align: center;
+
+    width: 100%;
+    padding: 10px;
+
+    background-color: rgb(238, 238, 238);
+}
+
+.score-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 0px 15px;
+}
+
+.player-choices{
+    display: flex;
+    gap: 10px;
+}
+
+.player-choice{
+    outline: none;
+    border: solid 2px gray;
+
+    width: 120px;
+    padding: 20px 20px;
+    cursor: pointer;
+}
+
+
+

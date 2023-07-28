@@ -5,9 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
+    <section>
+        <div class="game-section">
+            <div class="game-winner">VICTORY</div>
+            <div class="match-choices">
+                <div class="match-info player-match-info">
+                    <p>Player</p>
+                    <div class="move player-move">
+                        Scissors
+                    </div>
+                </div>
+                <div class="match-info computer-match-info">
+                    <p>Computer</p>
+                    <div class="move computer-move">
+                        Rock
+                    </div>
+                </div>
+            </div>
     
+            <div class="game-result">
+                <div class="match-result">Player Wins!</div>
+                <div class="score-content">
+                    <div class="player-score">Player score: <span>5</span></div>
+                    <div class="computer-score">Computer Score: <span>0</span></div>
+                </div>
+            </div>
+    
+            <div class="player-choices">
+                <button class="player-choice" id="rock-btn">Rock</button>
+                <button class="player-choice" id="paper-btn">Paper</button>
+                <button class="player-choice" id="scissors-btn">Scissors</button>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
