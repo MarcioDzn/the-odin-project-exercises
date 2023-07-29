@@ -11,24 +11,23 @@
 <body>
     <section>
         <div class="game-section">
-            <div class="game-winner">VICTORY</div>
             <div class="match-choices">
                 <div class="match-info player-match-info">
                     <p>Player</p>
                     <div class="move player-move">
-                        Scissors
+                        --------
                     </div>
                 </div>
                 <div class="match-info computer-match-info">
                     <p>Computer</p>
                     <div class="move computer-move">
-                        Rock
+                        --------
                     </div>
                 </div>
             </div>
     
             <div class="game-result">
-                <div class="match-result">Player Wins!</div>
+                <div class="match-result">--------</div>
                 <div class="score-content">
                     <div class="player-score">Player score: <span>0</span></div>
                     <div class="computer-score">Computer Score: <span>0</span></div>
@@ -42,5 +41,12 @@
             </div>
         </div>
     </section>
+
+    <div class="final-result-modal">
+        <div class="game-winner">VICTORY</div>
+        <button id="restart-btn">Restart Game</button>
+    </div>
+
+    <div class="overlay"></div>
 </body>
 </html>

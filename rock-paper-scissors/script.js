@@ -10,10 +10,29 @@ const computerMoveDiv = document.querySelector('.computer-move');
 const playerScoreBox = document.querySelector('.player-score span');
 const computerScoreBox = document.querySelector('.computer-score span');
 const gameWinnerBox = document.querySelector('.game-winner');
+const finalResultModal = document.querySelector('.final-result-modal');
+const restartBtn = document.querySelector('#restart-btn');
+const overlay = document.querySelector('.overlay');
 
 choicesBtn.forEach(choice => {
     choice.addEventListener('click', game);
 })
+
+restartBtn.addEventListener('click', restartGame);
+
+function restartGame(){
+    playerScore = 0;
+    computerScore = 0;
+    finalResultModal.classList.remove('active');
+    overlay.classList.remove('active');
+
+    playerScoreBox.textContent = playerScore;
+    computerScoreBox.textContent = computerScore;
+
+    playerMoveDiv.textContent = '--------';
+    computerMoveDiv.textContent = '--------';
+    matchResult.textContent = '--------';
+}
 
 function getComputerChoice(){
     return gameChoices[Math.floor(Math.random() * gameChoices.length)];
@@ -78,8 +97,9 @@ function game(e){
     if (playerScore == 5 || computerScore == 5){
         setWinnerBox(true);
         gameWinnerBox.textContent = `========= ${checkFinalWinner(playerScore, computerScore)} =========`;
-        playerScore = 0;
-        computerScore = 0;
+        finalResultModal.classList.add('active');
+        overlay.classList.add('active');
+
     }
 }
 
