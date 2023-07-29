@@ -87,8 +87,8 @@ function game(e){
     if (roundWinner == 1) playerScore++;
     else if (roundWinner == -1) computerScore++;
 
-    playerMoveDiv.textContent = playerSelection;
-    computerMoveDiv.textContent = computerSelection;
+    playerMoveDiv.innerHTML = `<img class="${playerSelection}-img" src="media/${playerSelection}.png" alt="${playerSelection}-image">`;
+    computerMoveDiv.innerHTML = `<img class="${computerSelection}-img" src="media/${computerSelection}.png" alt="${computerSelection}-image">`;
 
     matchResult.textContent = playRound(playerSelection, computerSelection);
     playerScoreBox.textContent = playerScore;

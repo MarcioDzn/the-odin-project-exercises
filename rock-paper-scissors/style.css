@@ -47,6 +47,11 @@ section{
     margin-top: 5px;
 }
 
+.move img{
+    width: 50px;
+    height: auto;
+}
+
 .game-result{
     display: flex;
     flex-direction: column;
@@ -86,6 +91,17 @@ section{
     width: 120px;
     padding: 20px 20px;
     cursor: pointer;
+}
+
+.player-choice img{
+    width: 30px;
+    height: auto;
+
+    pointer-events: none;
+}
+
+.scissors-img{
+    transform: rotate(180deg);
 }
 
 .final-result-modal{
