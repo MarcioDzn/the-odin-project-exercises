@@ -45,11 +45,16 @@ section{
 
     border: solid 5px rgb(238, 238, 238);
     margin-top: 5px;
+
 }
 
 .move img{
+    opacity: 0;
+
     width: 50px;
     height: auto;
+
+    transition: .7s ease-in-out;
 }
 
 .game-result{
@@ -98,10 +103,12 @@ section{
     height: auto;
 
     pointer-events: none;
+
+    transition: 0.5s;
 }
 
-.scissors-img{
-    transform: rotate(180deg);
+.player-choice:hover img{
+    transform: scale(1.15);
 }
 
 .final-result-modal{

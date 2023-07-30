@@ -74,6 +74,41 @@ function setWinnerBox(active){
     else gameWinnerBox.style.visibility = 'hidden';
 }
 
+function displayRestartModal(){
+    if (playerScore == 5 || computerScore == 5){
+        setWinnerBox(true);
+        gameWinnerBox.textContent = `========= ${checkFinalWinner(playerScore, computerScore)} =========`;
+        finalResultModal.classList.add('active');
+        overlay.classList.add('active');
+    }
+}
+
+function displayGameInfos(playerSelection, computerSelection){
+    matchResult.textContent = '--------';
+    playerMoveDiv.innerHTML = `<img class="${playerSelection}-img" src="media/${playerSelection}.png" alt="${playerSelection}-image">`;
+    computerMoveDiv.innerHTML = `<img class="${computerSelection}-img" src="media/${computerSelection}.png" alt="${computerSelection}-image">`;
+
+    setTimeout(() => {
+        playerMoveDiv.querySelector('img').style.opacity = 1;
+        playerMoveDiv.addEventListener('transitionend', () => {
+            computerMoveDiv.querySelector('img').style.opacity = 1
+
+            computerMoveDiv.addEventListener('transitionend', () => {
+                matchResult.textContent = playRound(playerSelection, computerSelection);
+                playerScoreBox.textContent = playerScore;
+                computerScoreBox.textContent = computerScore;
+
+                choicesBtn.forEach(choice => {
+                    choice.disabled = false;
+                    choice.setAttribute('style', 'pointer-events: all;')
+                });
+
+                displayRestartModal();
+            })
+        });
+    }, 300);
+}
+
 function game(e){
     let playerSelection = '';
     if (e.target.id == 'rock-btn') playerSelection = 'rock';
@@ -87,20 +122,12 @@ function game(e){
     if (roundWinner == 1) playerScore++;
     else if (roundWinner == -1) computerScore++;
 
-    playerMoveDiv.innerHTML = `<img class="${playerSelection}-img" src="media/${playerSelection}.png" alt="${playerSelection}-image">`;
-    computerMoveDiv.innerHTML = `<img class="${computerSelection}-img" src="media/${computerSelection}.png" alt="${computerSelection}-image">`;
+    choicesBtn.forEach(choice => {
+        choice.disabled = false;
+        choice.setAttribute('style', 'pointer-events: none;')
+    });
 
-    matchResult.textContent = playRound(playerSelection, computerSelection);
-    playerScoreBox.textContent = playerScore;
-    computerScoreBox.textContent = computerScore;
-    
-    if (playerScore == 5 || computerScore == 5){
-        setWinnerBox(true);
-        gameWinnerBox.textContent = `========= ${checkFinalWinner(playerScore, computerScore)} =========`;
-        finalResultModal.classList.add('active');
-        overlay.classList.add('active');
-
-    }
+    displayGameInfos(playerSelection, computerSelection);
 }
 
 
