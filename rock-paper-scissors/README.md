@@ -1,0 +1,32 @@
+<div align="center">
+
+<h1>✏️ Rock, Paper, Scissors </h1>
+
+</div>
+
+<div align="center">
+
+<img alt="javascript_badge" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"> 
+<img alt="html_badge" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> 
+<img alt="css_badge" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"> 
+
+</div>
+
+<div align="center">
+
+<img alt="mit_badge" src="https://img.shields.io/badge/license-MIT-blue"> 
+
+</div>
+
+Browser version of Rock, Paper, Scissors game.
+
+> Go to the project website by [clicking here!](https://marciodzn.github.io/the-odin-project-exercises/rock-paper-scissors/)
+
+<div align="center">
+
+<img alt="Gif showing a demonstration of Rock, Paper, Scissors game" src="demos/demo01.gif" style="width: 300px; height: auto;"> 
+
+</div>
+
+### 📌 Attribuition
+Rock, Paper and Scissors pictures by [Freepik](https://br.freepik.com/).
